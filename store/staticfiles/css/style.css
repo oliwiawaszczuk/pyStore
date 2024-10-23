@@ -1,0 +1,88 @@
+body{
+    /* background-color:#748E63; */
+    background-image:url("../images/dark-honeycomb.png");
+}
+
+#login_container{
+    width: 700px;
+    /* height: 500px; */
+    background-color: #99B080;
+    border-radius: 30px;
+    box-shadow: 7px 7px 0px #879F72;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    margin-right:-350px;
+    margin-top: -300px;
+}
+
+#login_container h1{
+    color: #30382b;
+    font-size: 44px;
+    font-family: Playpen Sans;
+}
+
+.form_place{
+    margin: 10px auto;
+    width: 73%;
+    color: #30382b;
+    font-size: 40px;
+}
+
+.icon_place{
+    float: left;
+    padding-top: 5px;
+}
+
+.input_text{
+    float: left;
+    padding-top: 5px;
+}
+
+.form_place input{
+    height: 30px;
+    padding: 4px 9px;
+    font-size: 18px;
+    border-width: 1px;
+    border-color: #CCCCCC;
+    background-color: #CCD8C0;
+    color: #30382b;
+    border-style: solid;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+    text-shadow: 0px 0px 0px rgba(66,66,66,.75);
+    outline:none;
+    
+}
+
+.myButton {
+	box-shadow: 0px 1px 0px 0px #1c1b18;
+	background-color:#d3e8be;
+	border-radius:17px;
+	border:1px solid #30382b;
+	cursor:pointer;
+	color:#30382b;
+	font-family:Verdana;
+	font-size:20px;
+	font-weight:bold;
+	padding:12px 35px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+.myButton:hover {
+	background-color:#d3e8be;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.bottom_text{
+    font-size: 20px;
+    color: #30382b;
+}
+
+.bottom_text a{
+    text-decoration: underline;
+    color: #4f5c48;
+}

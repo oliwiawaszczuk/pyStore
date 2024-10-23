@@ -1,0 +1,239 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>PyStore</title>
+    <link rel="Shortcut icon" href="{% static 'images/Rnalogo.png' %}" />
+
+    <meta name="autor" content="praRobakk">
+    <meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'fontello/fontello-e53e7ab4/css/fontello.css' %}" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <style>
+        #container_store{
+            width: 75%;
+            margin: 0;
+        }
+        #basket{
+            width: 24%;
+            height: 850px;
+            color:#99B080;
+            margin: 0;
+            padding: 0;
+            background-color: #495a3e;
+            position: fixed;
+            right: 10px;
+            top: 110px;
+            font-family: 'Playpen Sans', cursive;
+            font-size: 24px;
+            overflow: auto;
+        }
+        #basket ul{
+            list-style-type: circle;
+            margin-left: 5px;
+        }
+        #basket ul a{
+            color:#99B080;
+            text-decoration:none;
+        }
+    </style>
+
+    <script>
+        window.onbeforeunload = function() {
+            localStorage.setItem('scrollPosition', window.scrollY);
+        };
+
+        window.onload = function() {
+            var scrollPosition = localStorage.getItem('scrollPosition');
+            if (scrollPosition) {
+                window.scrollTo(0, scrollPosition);
+            }
+        };
+
+        var basketItems = document.querySelectorAll('#basket a');
+        basketItems.forEach(function(item) {
+            item.addEventListener('click', function(event) {
+                // Zapisz pozycję przewijania przed przejściem do strony usuwania produktu
+                localStorage.setItem('scrollPosition', window.scrollY);
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div id="header">
+        <img src="{% static 'images/pystore_logo.png' %}" height="80" style="padding: 10px; padding-left: 20px;">
+        <div id="welcome">Witaj {{username}} w PyStore</div>
+        <div id="right_header" style="font-size:40px; ">
+            <i class="icon-user"></i>{{username}}
+            <br>
+            <a href='http://127.0.0.1:8000/login_page/' style="text-decoration:none; color:#99B080;">
+                <p style="font-size:19px; padding-right: 0px; text-shadow:0px 0px 0px #495a3e; text-align: right;">Wyloguj sie</p>
+            </a>
+        </div>
+    </div>
+
+    <div id="container_store">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="cont_product">
+                        <div class="name_product">Ciastka</div>
+                        <img src="{% static 'images/ciastka.png' %}" width="100%">
+                        <div class="price_product">Cena: 4,4zl <a href="{% url 'create_purchase' username=username product_id='ciastka' %}" class="add_product">+</a></div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="cont_product">
+                        <div class="name_product">Paluszki</div>
+                        <img src="{% static 'images/paluszki.png' %}" width="100%">
+                        <div class="price_product">Cena: 2,5zl <a href="{% url 'create_purchase' username=username product_id='paluszki' %}" class="add_product">+</a></div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="cont_product">
+                        <div class="name_product">Kawa</div>
+                        <img src="{% static 'images/kawa.png' %}" width="100%">
+                        <div class="price_product">Cena: 48,5zl <a href="{% url 'create_purchase' username=username product_id='kawa' %}" class="add_product">+</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="cont_product">
+                        <div class="name_product">Maka</div>
+                        <img src="{% static 'images/maka.png' %}" width="100%">
+                        <div class="price_product">Cena: 3zl <a href="{% url 'create_purchase' username=username product_id='maka' %}" class="add_product">+</a></div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="cont_product">
+                        <div class="name_product">Budyn</div>
+                        <img src="{% static 'images/budyn.png' %}" width="100%">
+                        <div class="price_product">Cena: 1,2zl <a href="{% url 'create_purchase' username=username product_id='budyn' %}" class="add_product">+</a></div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="cont_product">
+                        <div class="name_product">Majonez</div>
+                        <img src="{% static 'images/majonez.png' %}" width="100%">
+                        <div class="price_product">Cena: 9,3zl <a href="{% url 'create_purchase' username=username product_id='majonez' %}" class="add_product">+</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="cont_product">
+                        <div class="name_product">Cukier</div>
+                        <img src="{% static 'images/cukier.png' %}" width="100%">
+                        <div class="price_product">Cena: 8,8zl <a href="{% url 'create_purchase' username=username product_id='cukier' %}" class="add_product">+</a></div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="cont_product">
+                        <div class="name_product">Wafle</div>
+                        <img src="{% static 'images/wafle.png' %}" width="100%">
+                        <div class="price_product">Cena: 4,2zl <a href="{% url 'create_purchase' username=username product_id='wafle' %}" class="add_product">+</a></div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="cont_product">
+                        <div class="name_product">Ryz</div>
+                        <img src="{% static 'images/ryz.png' %}" width="100%">
+                        <div class="price_product">Cena: 4,9zl <a href="{% url 'create_purchase' username=username product_id='ryz' %}" class="add_product">+</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="cont_product">
+                        <div class="name_product">Makaron</div>
+                        <img src="{% static 'images/makaron.png' %}" width="100%">
+                        <div class="price_product">Cena: 5,9zl <a href="{% url 'create_purchase' username=username product_id='makaron' %}" class="add_product">+</a></div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="cont_product">
+                        <div class="name_product">Kakao</div>
+                        <img src="{% static 'images/kakao.png' %}" width="100%">
+                        <div class="price_product">Cena: 7zl <a href="{% url 'create_purchase' username=username product_id='kakao' %}" class="add_product">+</a></div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="cont_product">
+                        <div class="name_product">Olej</div>
+                        <img src="{% static 'images/olej.png' %}" width="100%">
+                        <div class="price_product">Cena: 6,4zl <a href="{% url 'create_purchase' username=username product_id='olej' %}" class="add_product">+</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="cont_product">
+                        <div class="name_product">Imbir</div>
+                        <img src="{% static 'images/imbir.png' %}" width="100%">
+                        <div class="price_product">Cena: 3zl <a href="{% url 'create_purchase' username=username product_id='imbir' %}" class="add_product">+</a></div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="cont_product">
+                        <div class="name_product">Nasiona lnu</div>
+                        <img src="{% static 'images/nasiona_lnu.png' %}" width="100%">
+                        <div class="price_product">Cena: 10,5zl <a href="{% url 'create_purchase' username=username product_id='nasiona lnu' %}" class="add_product">+</a></div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="cont_product">
+                        <div class="name_product">Herbata</div>
+                        <img src="{% static 'images/herbata.png' %}" width="100%">
+                        <div class="price_product">Cena: 8zl <a href="{% url 'create_purchase' username=username product_id='herbata' %}" class="add_product">+</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="cont_product">
+                        <div class="name_product">Czekolada</div>
+                        <img src="{% static 'images/czekolada.png' %}" width="100%">
+                        <div class="price_product">Cena: 4,7zl <a href="{% url 'create_purchase' username=username product_id='czekolada' %}" class="add_product">+</a></div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="cont_product">
+                        <div class="name_product">Woda</div>
+                        <img src="{% static 'images/woda.png' %}" width="100%">
+                        <div class="price_product">Cena: 2,4zl <a href="{% url 'create_purchase' username=username product_id='woda' %}" class="add_product">+</a></div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="cont_product">
+                        <div class="name_product">Chleb</div>
+                        <img src="{% static 'images/chleb.png' %}" width="100%">
+                        <div class="price_product">Cena: 5,3zl <a href="{% url 'create_purchase' username=username product_id='chleb' %}" class="add_product">+</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="basket">
+        <center style="font-size: 35px; text-shadow: 2px 2px 2px #2e3f32;">Twoj koszyk:</center>
+        <ul>
+            {% for item in shopping_items %}
+            <a href="{% url 'remove_product' username=username product_id=item.product.id %}">
+                <li>{{item.count}}x {{ item.product }} - {{item.product.price}}zl</li>
+            </a>
+            {% endfor %}
+        </ul>
+        <p style="font-size: 30px; text-shadow: 2px 2px 2px #2e3f32; margin-left: 20px;">Koszta: {{total_cost}}zl</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

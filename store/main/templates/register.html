@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>PyStore - Zarejestruj sie</title>
+	<link rel="Shortcut icon" href="{% static 'images/Rnalogo.png' %}" />
+
+    <meta name="autor" content="praRobakk">
+    <meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="{% static 'fontello/fontello-e53e7ab4/css/fontello.css' %}" type="text/css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap" rel="stylesheet">
+
+<!--    <link rel="stylesheet" href="style.css" type="text/css">-->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+    <div id="login_container">
+    <form method="post" action="{% url 'register' %}">{% csrf_token %}
+        <center><h1>PyStore - Zarejestruj sie</h1></center>
+        <div class="form_place">
+            <div class="icon_place"><i class="icon-user"></i></div>
+            <div class="input_text">Login</div>
+            <input type="text" id="username" name="username" maxlength=20 required>
+        </div>
+        <div class="form_place">
+            <div class="icon_place"><i class="icon-mail-alt"></i></div>
+            <div class="input_text">E-mail</div>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form_place">
+            <div class="icon_place"><i class="icon-key"></i></div>
+            <div class="input_text">Haslo</div>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form_place">
+                <button type="submit" class="myButton">Zarejestruj się</button>
+        </div>
+    </form>
+        <div style="height: 15px;"></div>
+        <center><div class="bottom_text">Masz konto? <a href="/login_page">Zaloguj sie</a></div></center>
+        <div style="height: 15px;"></div>
+    </div>
+</body>
+</html>

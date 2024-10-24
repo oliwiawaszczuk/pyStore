@@ -1,0 +1,159 @@
+body{
+    /* background-color:#748E63; */
+    background-image:url("g/dark-honeycomb.png");
+    margin:0;
+}
+
+#login_container{
+    width: 700px;
+    /* height: 500px; */
+    background-color: #99B080;
+    border-radius: 30px;
+    box-shadow: 7px 7px 0px #879F72;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    margin-right:-350px;
+    margin-top: -300px;
+}
+#login_container h1{
+    color: #30382b;
+}
+.form_place{
+    margin: 10px auto;
+    width: 62%;
+    color: #30382b;
+    font-size: 40px;
+    text-align: center;
+}
+.icon_place{
+    float: left;
+    padding-top: 5px;
+}
+.input_text{
+    float: left;
+    padding-top: 5px;
+}
+.form_place input{
+    height: 30px;
+    padding: 4px 9px;
+    font-size: 18px;
+    border-width: 1px;
+    border-color: #CCCCCC;
+    background-color: #CCD8C0;
+    color: #30382b;
+    border-style: solid;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+    text-shadow: 0px 0px 0px rgba(66,66,66,.75);
+    outline:none;
+    
+}
+.myButton {
+	box-shadow: 0px 1px 0px 0px #1c1b18;
+	background-color:#d3e8be;
+	border-radius:17px;
+	border:1px solid #30382b;
+	cursor:pointer;
+	color:#30382b;
+	font-family:Verdana;
+	font-size:20px;
+	font-weight:bold;
+	padding:12px 35px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+.myButton:hover {
+	background-color:#d3e8be;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+.bottom_text{
+    font-size: 20px;
+    color: #30382b;
+}
+.bottom_text a{
+    text-decoration: underline;
+    color: #4f5c48;
+}
+
+#header{
+    background-color: #495a3e;
+    width: 100%;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; 
+    top: 0; 
+    z-index: 100;
+    font-family: 'Playpen Sans', cursive;
+    text-shadow: 2px 2px 2px #2e3f32;
+}
+#right_header{
+    font-size:44px;
+    color:#99B080;
+    padding-right: 10px;
+}
+#welcome{
+    text-align: center;
+    flex: 1;
+    font-size:44px;
+    color:#99B080;
+}
+.container{
+    margin-top:120px;
+    font-family: 'Playpen Sans', cursive;
+}
+.cont_product{
+    border: 6px dotted #99B080;
+    color: #99B080;
+}
+.name_product{
+    font-size: 44px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 6px dashed #495a3e;
+}
+.price_product{
+    border-top: 6px dashed #495a3e;
+    font-size: 32px;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.add_product{
+    text-decoration: none;
+    font-weight: bolder;
+    color: #c0ceb1;
+}
+.row{
+    padding:15px;
+}
+
+#content{
+    width: 75%;
+    margin: 0;
+}
+#basket{
+    width: 24%;
+    height: 850px;
+    color:#99B080;
+    margin: 0;
+    padding: 0;
+    background-color: #495a3e;
+    position: fixed; 
+    right: 10px;
+    top: 110px;
+    font-family: 'Playpen Sans', cursive;
+    font-size: 24px;
+    overflow: auto;
+}
+#basket ul{
+    list-style-type: circle;
+    margin-left: 5px;
+}
